@@ -1,0 +1,2 @@
+# PlatobneBrany.sk
+
