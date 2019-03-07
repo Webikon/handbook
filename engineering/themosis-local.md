@@ -88,6 +88,12 @@ npm run production
 
 [https://framework.themosis.com/docs/2.0/theme/](https://framework.themosis.com/docs/2.0/theme/)
 
+### Themosis structure
+
+[https://framework.themosis.com/docs/2.0/structure/](https://framework.themosis.com/docs/2.0/structure/)
+
+
+
 WordPress quick install
 
 ```text
