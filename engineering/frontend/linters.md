@@ -12,9 +12,16 @@ V teme je to subor `.editorconfig`
 
 V projektoch by mali byt vzdy konfiguraky pre zakladne standardy, ktore si lintery natahaju a dokazu nas upozornovat na ich nedorziavanie. Na Blade a Twig templaty nefunguje ziadny autoformatter/autofixer spolahlivo, takze nepouzivat, lebo zvykne celu templatu rozhadzat.
 
-**ESLint** zakladne standardy pre JS moznost pouzit Beautifier alebo nieco podobne na automaticku opravu chyb
+**ESLint** zakladne standardy pre JS moznost pouzit Beautifier alebo nieco podobne na automaticku opravu chyb  
+[https://eslint.org/](https://eslint.org/)  
+Treba si nainstalovat integraciu tohto lintera do svojho editora.
 
-**SASSLint/SCSSLint** podla projektu, treba hladat
+**SASSLint/SCSSLint** podla projektu, treba hladat  
+Na vacsine projektov pouzivame [https://github.com/sasstools/sass-lint](https://github.com/sasstools/sass-lint), ktory pouziva `.sass-lint.yml` konfigurak.  
+Treba si nainstalovat integraciu tohto lintera do svojho editora.  
 
-**PHP Codesniffer**
+
+**PHP Codesniffer**  
+[https://github.com/squizlabs/PHP\_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)  
+****Treba si nainstalovat integraciu tohto lintera do svojho editora.
 
