@@ -39,7 +39,34 @@ V projektoch pouzivame BEM alebo jeho modifikacie. \(napr. HBReavis pouziva podo
 
 Na novsich projektoch pouzivame v kombinacii s BEM. Pouzivame hlavne na grid visibility spacing textove helpery
 
+### **Triedy pre JS**
 
+Ked v JS targetujeme nejaky element, pridame tomuto elementu v HTML classu s prefixom `.js-` a v JS targetujeme tuto classu. Toto nam zabezpeci, ze uz v HTML na prvy pohlad vieme, ze na danom elemente sa nieco robi s JS =&gt; lepsie debugovanie.  
+Tieto classy ale **NEPOUZIVAME** v CSSku.
+
+### Triedy pre zmenu stavu
+
+Ked sa na danom elemente meni stav, napr. je otvoreny, vysunuty, expandnuty atd. pouzivame classy s predponou `.is-` cize `.is-opened` `.is-expanded` atd.
+
+### Relativne velkosti
+
+Namiesto pixelov pouzivame REM jednotky, cez funkciu `rem-calc()`, ktora z pixelov vypocita hodnotu v REM. Tymto sa velkost prisposobuje podla velkosti pisma v root HTML elemente. =&gt; lepsia responzivita a accessibility   
+  
+PX pouzivame pri `border` a dekoraciach.  
+Tak isto sa PX moze pouzit ako vynimka na miestach, kde velkost musi ostat rovnaka za kazdych okolnosti na kazdom zariadeni, po aplikovani zoomu, atd.
+
+Pri `line-height` sa nepouziva ziadna jednotka! 
+
+Vynimky, kde pouzit  su miesta, kde musi byt velkost stale rovnaka za kazdych okolnosti.
+
+```text
+// namiesto tohto
+font-size: 14px;
+// pouzijeme toto
+font-size: rem-calc(14);
+```
+
+### 
 
 ### Useful links
 
