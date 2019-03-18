@@ -6,6 +6,7 @@
   * [Tools and tips](general/tools-and-tips.md)
   * [Communication](general/communication.md)
 * [Engineering](engineering/README.md)
+  * [Code Review](engineering/code-review.md)
   * [WordPress](engineering/wordpress.md)
   * [Support](engineering/support.md)
   * [Security](engineering/security.md)

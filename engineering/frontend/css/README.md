@@ -52,7 +52,7 @@ Ked sa na danom elemente meni stav, napr. je otvoreny, vysunuty, expandnuty atd.
 
 Namiesto pixelov pouzivame REM jednotky, cez funkciu `rem-calc()`, ktora z pixelov vypocita hodnotu v REM. Tymto sa velkost prisposobuje podla velkosti pisma v root HTML elemente. =&gt; lepsia responzivita a accessibility   
   
-PX pouzivame pri `border` a dekoraciach.  
+Pixele vzdy pouzivame pri `border` a dekoraciach ako `letter-spacing`.  
 Tak isto sa PX moze pouzit ako vynimka na miestach, kde velkost musi ostat rovnaka za kazdych okolnosti na kazdom zariadeni, po aplikovani zoomu, atd.
 
 Pri `line-height` sa nepouziva ziadna jednotka! 
