@@ -110,3 +110,33 @@ lando wp core install --url=$PROJECT_NAME.lndo.site --title="$PROJECT_NAME" --ad
   function mkdircd () { mkdir -p "$@" && cd "$@"; }
   ```
 
+
+
+### How to run Themosis on Local By Flywheel
+
+Same principle as Bedrock  
+[https://local.getflywheel.com/community/t/how-to-install-bedrock-with-local-by-flywheel/2376/9](https://local.getflywheel.com/community/t/how-to-install-bedrock-with-local-by-flywheel/2376/9)
+
+1. Use the Custom environment \(nginx, PHP 7.2 or greater, and MySQL 5.6 are ideal\) so you can edit the config files directly in the site’s conf folder
+2. Put all of Themosis into the site’s `app` directory. Delete the `public` directory
+3. Open up the appropriate `nginx.conf` file and change the web root to `/app/htdocs`
+4. Change the appropriate Themosis config \(`.env`\) file to use the following database info:
+5. * DBHost: **localhost**
+   * DBName: **local**
+   * User: **root**
+   * Password: **root**
+6. Restart the site
+
+To fix WP CLI you need to:
+
+* right click on the Wordpress install in local and open Site SSH
+* rewrite the path via command line like so: `nano /wp-cli.yml`
+* replace `/app/public` with `/app/htdocs/cms`
+* hit `CTRL+X` to exit followed by `Y` and than enter to save changes
+
+To fix Adminer:
+
+* just try to launch it once. it will error 404
+* it will generate a adminer php file into the `public` folder.
+* Copy it into your web folder of Themosis
+
