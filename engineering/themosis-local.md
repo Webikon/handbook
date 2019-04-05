@@ -120,11 +120,17 @@ Same principle as Bedrock
 1. Use the Custom environment \(nginx, PHP 7.2 or greater, and MySQL 5.6 are ideal\) so you can edit the config files directly in the site’s conf folder
 2. Put all of Themosis into the site’s `app` directory. Delete the `public` directory
 3. Open up the appropriate `nginx.conf` file and change the web root to `/app/htdocs`
-4. Change the appropriate Themosis config \(`.env`\) file to use the following database info:
-5. * DBHost: **localhost**
-   * DBName: **local**
-   * User: **root**
-   * Password: **root**
+4. Change the appropriate Themosis config `.env` file \(or create one in project root\) to use the following:
+5. ```text
+   APP_ENV = "local"
+   APP_DEBUG = true
+   DATABASE_NAME = "local"
+   DATABASE_USER = "root"
+   DATABASE_PASSWORD = "root"
+   DATABASE_HOST = "localhost"
+   APP_URL = "http://website.local"
+   WP_URL = "http://website.local/cms"
+   ```
 6. Restart the site
 
 To fix WP CLI you need to:
