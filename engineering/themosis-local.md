@@ -119,7 +119,7 @@ Same principle as Bedrock
 
 1. Use the Custom environment \(nginx, PHP 7.2 or greater, and MySQL 5.6 are ideal\) so you can edit the config files directly in the site’s conf folder
 2. Put all of Themosis into the site’s `app` directory. Delete the `public` directory
-3. Open up the appropriate `nginx.conf` file and change the web root to `/app/htdocs`
+3. Open up the appropriate `site.conf` file and change the web root to `/app/htdocs`
 4. Change the appropriate Themosis config `.env` file \(or create one in project root\) to use the following:
 5. ```text
    APP_ENV = "local"
@@ -132,6 +132,8 @@ Same principle as Bedrock
    WP_URL = "http://website.local/cms"
    ```
 6. Restart the site
+7. In root, run `composer install` to download PHP dependencies and WP/plugins
+8. In theme run `npm install` to download dependencies needed for assets building, external libraries, etc.
 
 To fix WP CLI you need to:
 
