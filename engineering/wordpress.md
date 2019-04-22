@@ -1,4 +1,0 @@
-# WordPress
-
-## WP-CLI
-
