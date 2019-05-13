@@ -68,6 +68,7 @@
     * [Backend](engineering/how-we-develop/themosis/README.md)
       * [Migrating Jigsaw to Themosis](engineering/how-we-develop/themosis/migrating-jigsaw-to-themosis.md)
       * [Themosis Default Fields](engineering/how-we-develop/themosis/fields.md)
+    * [Before commit checklist](engineering/how-we-develop/before-commit-checklist.md)
   * [Guides](engineering/our-guides/README.md)
     * [How to run Themosis locally](engineering/our-guides/themosis-local.md)
   * [Other](engineering/other/README.md)
