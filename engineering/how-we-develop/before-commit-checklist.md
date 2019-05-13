@@ -4,12 +4,12 @@ description: What should I check to make both me and reviewer less work ;)
 
 # Before commit checklist
 
-* [ ] Do I use proper formatting, indenting and keep standards?
+* [ ] Do I use proper formatting, indenting and keep standards defined in project? [https://handbook.webikon.eu/engineering/style-guides](https://handbook.webikon.eu/engineering/style-guides)
   * PHP \(usually PSR-2\)
   * SASS \(.sass-lint\)
   * Blade/HTML
 * [ ] Does ALL my functions have DocBlock comments? \(WP hooks needs only basic comments, not necessarily in DocBlock format\)
-* [ ] When I use “magic numbers” or complex functionality, do I have it properly commented? Yeah, I know what this code is doing… but what about when I look at it next month? ;\)
+* [ ] When I use “magic numbers” or complex functionality, do I have it properly commented? Yeah, I know what this code is doing… but what about when I look at it next month? ;\) [https://handbook.webikon.eu/engineering/standards/documentation](https://handbook.webikon.eu/engineering/standards/documentation)
 * [ ] When I copied/pasted some snippet from Stack Overflow \(or other project\), did I properly customised this code to fit this project, added proper comments and/or link to source of this code? Especially when I don’t really know what this code really does… :\)
 * [ ] Am I using BEM naming properly?
 * [ ] Did I do double check for all git diff for this commit for misspellings, forgotten unused code and other mistakes? Yes… Really? Did I? \(Most of small mistakes and “pingponging” code from reviewer to dev can be avoided exactly with this.\)

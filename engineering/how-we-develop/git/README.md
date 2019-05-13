@@ -1,3 +1,7 @@
+---
+description: Git best practices.
+---
+
 # Git
 
 Samostatna kapitola. Git je **must-know** v dnesnej dobe :\) Aspon zaklady - commit, pull, push, merge, rebase, stash.
