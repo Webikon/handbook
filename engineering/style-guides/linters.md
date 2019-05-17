@@ -43,6 +43,8 @@ _On some projects, we also integrate this to our assets building process, so it 
 
 #### **Autofix JS**
 
+You can use Beautifier.
+
 **TODO** Prettier and its configs.
 
 ### SASSLint
@@ -71,10 +73,10 @@ _On some projects, we also integrate this in CI or git hooks, so it throws error
 
 #### **Autofix PHP**
 
-Recommended one is **phpcbf** \(automatically installed with phpcs\).   
-When you install plugin below, it should automatically look for `phpcs.xml` in project root and apply proper standards.
+Recommended one is **php-cs-fixer \(**[**https://github.com/FriendsOfPHP/PHP-CS-Fixer**](https://github.com/FriendsOfPHP/PHP-CS-Fixer)**\)**.   
+When you install plugin below, it should automatically look for `phpcs.xml` or `.php_cs.dist` in project root and apply proper standards.
 
-VSC: [https://github.com/soderlind/vscode-phpcbf](https://github.com/soderlind/vscode-phpcbf)
+VSC: [https://marketplace.visualstudio.com/items?itemName=fterrag.vscode-php-cs-fixer](https://marketplace.visualstudio.com/items?itemName=fterrag.vscode-php-cs-fixer)
 
 ### HTML/Blade
 
