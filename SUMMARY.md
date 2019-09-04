@@ -51,6 +51,7 @@
     * [PHP](engineering/style-guides/php.md)
     * [Linters](engineering/style-guides/linters.md)
   * [How we develop](engineering/how-we-develop/README.md)
+    * [CI/CD](engineering/how-we-develop/ci-cd.md)
     * [How to start](engineering/how-we-develop/how-to-start.md)
     * [Workflows](engineering/how-we-develop/workflows.md)
     * [Project Init](engineering/how-we-develop/project-init/README.md)
