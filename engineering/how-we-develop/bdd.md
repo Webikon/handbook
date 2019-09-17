@@ -162,6 +162,70 @@ Scenario: Video captions
     Then the correct closed captions display throughout the video
 ```
 
+## BDD in Sylius
+
+The first thing that needs to be done, is _.feature_ file written with **Gherkin language**. This is how it can look like:
+
+```text
+1  Feature: Receiving fixed discount on cart
+2     In order to pay proper amount while buying promoted goods
+3     As a Visitor
+4     I want to have promotions applied to my cart
+5 
+6     Background:
+7         Given the store has a product "PHP T-Shirt" priced at $100.00
+8         And there is a promotion "Holiday promotion"
+9         And it gives $10.00 discount to every order
+10
+11    Scenario: Receiving fixed discount for my cart
+12        When I add product "PHP T-Shirt" to the cart
+13        Then my cart total should be $90.00
+14        And my discount should be -$10.00
+```
+
+As you can see, scenario describes one specific example of the feature – and therefore shows exactly what we want to achieve after implementing it. Whole feature file consists of a few conventional parts:
+
+1. Feature title \(line 1\)
+2. Feature benefit \(line 2\)
+3. Feature actor \(line 3\) – the beneficiary of the feature
+4. Feature way to reach the benefit \(line 4\)
+5. Background \(line 6\) – application setup, usually containing some data that should be placed in database before any action can be taken
+6. One or more scenarios \(line 11\) – list of specific steps which are taken to fulfill the feature benefit
+
+What is more, features are not written in some programming language, they are normal sentences, that can be easily understood by any non-technical person – and this is exactly how it should be!
+
+Next, each of these steps is mapped to PHP code, in a class called Context, where the required setup and assertions are made. Below you can see, how some of such implementations can look like:
+
+```text
+/**
+ * @Given the store has a product :name priced at :price
+ */
+public function theStoreHasProduct(string $name, string $price): void
+{
+    $product = new Product();
+    $product->setName($name);
+    $product->setPrice(
+        new Money(str_replace(['$', '.'], '', '$100.00'), new Currency('USD'))
+    );
+
+    $this->productRepository->save($product);
+}
+
+/**
+ * @Then my cart total should be :total
+ */
+public function myCartTotalShouldBe(string $total): void
+{
+    $cartTotal = $this->getDocument()->find('css', '#cart-total')->getText();
+
+    assert($cartTotal === $total);
+}
+```
+
+Of course at the beginning your test will fail – perhaps you don’t have the cart page or even a product entity yet. Nevertheless the goal is explained, you can start coding and be sure, that you’ve implemented exactly what you wanted to achieve! At the end the only thing that matters is having well designed and fully tested application, which fulfills the business expectations – and this is one of the most reliable ways to achieve it.
+
+
+
 ## Resources
 
 * [https://automationpanda.com/bdd/](https://automationpanda.com/bdd/)
@@ -169,4 +233,20 @@ Scenario: Video captions
 * [https://codeception.com/docs/07-BDD](https://codeception.com/docs/07-BDD)
 * [https://cucumber.io/docs/gherkin/reference/](https://cucumber.io/docs/gherkin/reference/)
 * [https://wpbrowser.wptestkit.dev](https://wpbrowser.wptestkit.dev)
+
+
+
+Few tips & rules to follow when working with PHPSpec & Sylius:
+
+* RED is good, add or fix the code to make it green;
+* RED-GREEN-REFACTOR is our rule;
+* All specs must pass;
+* When writing examples, **describe** the behavior of the object in present tense;
+* Omit the `public` keyword;
+* Use underscores \(`_`\) in the examples;
+* Use type hinting to mock and stub classes;
+* If your specification is getting too complex, the design is wrong, try decoupling a bit more;
+* If you cannot describe something easily, probably you should not be doing it that way;
+* shouldBeCalled or willReturn, never together, except for builders;
+* Use constants in assumptions but strings in expected results;
 
