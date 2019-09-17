@@ -51,6 +51,7 @@
     * [PHP](engineering/style-guides/php.md)
     * [Linters](engineering/style-guides/linters.md)
   * [How we develop](engineering/how-we-develop/README.md)
+    * [BDD](engineering/how-we-develop/bdd.md)
     * [Symfony](engineering/how-we-develop/symfony/README.md)
       * [Sylius](engineering/how-we-develop/symfony/sylius.md)
     * [CI/CD](engineering/how-we-develop/ci-cd.md)
