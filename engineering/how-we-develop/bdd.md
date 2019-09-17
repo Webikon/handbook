@@ -48,6 +48,10 @@ Feature: Scheduling a training course
 
 It costs something to write them out in this detailed format and think about how much detail you're gonna include. When you're going to build the system soon you write them out in this kind of **Given**, **When**, **Then** format and you show them to the person you had the conversation with and says, this is what we talked about. So whoever learned the most in the conversation can write out these scenarios, so this is what we talked about in the room. Please validate that. Let's just double check. You don't do this, you don't write them out in this detail in advance for everything.
 
+> _As a \[role\]_  
+> _I want \[feature\]_  
+> _So that \[benefit\]_
+
 ```text
 Feature: Installation
   In order to use the plugin
@@ -111,19 +115,51 @@ Scenario: the various pickle types are created
   And there will be pickle-type "actors"
 ```
 
+```text
+Feature: Product basket
+  In order to buy products
+  As a customer
+  I need to be able to put interesting products into a basket
+
+  Rules:
+  - VAT is 20%
+  - Delivery for basket under £10 is £3
+  - Delivery for basket over £10 is £2
+
+  Scenario: Buying a single product under £10
+    Given there is a "Sith Lord Lightsaber", which costs £5
+    When I add the "Sith Lord Lightsaber" to the basket
+    Then I should have 1 product in the basket
+    And the overall basket price should be £9
+
+  Scenario: Buying a single product over £10
+    Given there is a "Sith Lord Lightsaber", which costs £15
+    When I add the "Sith Lord Lightsaber" to the basket
+    Then I should have 1 product in the basket
+    And the overall basket price should be £20
+
+  Scenario: Buying two products over £10
+    Given there is a "Sith Lord Lightsaber", which costs £10
+    And there is a "Jedi Lightsaber", which costs £5
+    When I add the "Sith Lord Lightsaber" to the basket
+    And I add the "Jedi Lightsaber" to the basket
+    Then I should have 2 products in the basket
+    And the overall basket price should be £20
+```
+
 Gherkin for your accessibility scenarios
 
 ```text
 Scenario: Skip to content link
-Given I am on the homepage
-When I select the ‘Skip to content’ link
-Then the main content has keyboard focus
+    Given I am on the homepage
+    When I select the ‘Skip to content’ link
+    Then the main content has keyboard focus
 
 Scenario: Video captions
-Given I am on the video page
-When I select the ‘play’ button
-And I turn on captions
-Then the correct closed captions display throughout the video
+    Given I am on the video page
+    When I select the ‘play’ button
+    And I turn on captions
+    Then the correct closed captions display throughout the video
 ```
 
 ## Resources
@@ -131,5 +167,6 @@ Then the correct closed captions display throughout the video
 * [https://automationpanda.com/bdd/](https://automationpanda.com/bdd/)
 * [https://dannorth.net/introducing-bdd/](https://dannorth.net/introducing-bdd/)
 * [https://codeception.com/docs/07-BDD](https://codeception.com/docs/07-BDD)
+* [https://cucumber.io/docs/gherkin/reference/](https://cucumber.io/docs/gherkin/reference/)
 * [https://wpbrowser.wptestkit.dev](https://wpbrowser.wptestkit.dev)
-* 
+
