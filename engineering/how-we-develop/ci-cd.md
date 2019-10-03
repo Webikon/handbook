@@ -6,6 +6,12 @@ You can test all the commands from CI/CD pipeline in local interactive bash shel
 
 We use these Docker images for test PHP applications with Gitlab CI \(or any other CI plataform!\) [https://github.com/edbizarro/gitlab-ci-pipeline-php](https://github.com/edbizarro/gitlab-ci-pipeline-php).
 
+```text
+docker run -it edbizarro/gitlab-ci-pipeline-php:7.3-alpine bash
+```
+
+#### Alternative
+
 Download/pull a Git repository to _/path/to/local/folder_ but don't run any build scripts on your host machine. Start a Bash session with the following command instead.
 
 ```text
