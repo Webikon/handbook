@@ -76,6 +76,7 @@
       * [Commit messages](engineering/how-we-develop/git/commit-messages.md)
     * [Before commit checklist](engineering/how-we-develop/before-commit-checklist.md)
   * [Guides](engineering/our-guides/README.md)
+    * [WordPress on localhost](engineering/our-guides/wordpress-on-localhost.md)
     * [How to run Themosis locally](engineering/our-guides/themosis-local.md)
   * [Other](engineering/other/README.md)
     * [Code Review](engineering/other/code-review.md)
