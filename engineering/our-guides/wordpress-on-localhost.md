@@ -14,13 +14,35 @@ symfony proxy:start
 
 > If you prefer to use a different TLD, edit the `~/.symfony/proxy.json` file \(where `~` means the path to your user directory\) and change the value of the `tld` option from `wip` to any other TLD.
 
+```yaml
+{
+    "tld": "test",
+    "port": 7080,
+    "domains": {
+        "project-domain": "/Users/me/Development/project-themosis/htdocs"
+    }
+}
+```
+
 Enabling TLS
 
 ```text
 symfony server:ca:install
 ```
 
-### 1. Spin up the services \(MySQL, Redis, Mailhog...\)
+### 1. Setup a project
+
+```text
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=
+APP_TD=project-themosis
+
+APP_URL=https://project-domain.test
+WP_URL=https://project-domain.test/cms
+```
+
+### 2. Spin up the services \(MySQL, Redis, Mailhog...\)
 
 ```bash
 docker-compose up -d
@@ -44,17 +66,17 @@ services:
         ports: [3306]
 ```
 
-### 2. Import the database
+### 3. Import the database
 
 ```text
 docker-compose exec -T database mysql -uwordpress -pwordpress wordpress < database/dumps/some-dump.sql
 ```
 
 ```text
-wp search-replace 'http://live-project.tld' 'http://project-domain.test'
+symfony php wp-cli.phar search-replace 'http://live-project.tld' 'http://project-domain.test'
 ```
 
-### 3. Start development server
+### 4. Start development server
 
 ```bash
 symfony server:start --dir=htdocs
@@ -63,13 +85,13 @@ symfony server:start --dir=htdocs
 symfony server:start -d --dir=htdocs
 ```
 
-### 4. Add the domain
+### 5. Add the domain
 
 ```bash
 symfony proxy:domain:attach project-domain --dir=htdocs
 ```
 
-### 5. Configuration requirements
+### 6. Configuration requirements
 
 ```php
 // FILE: config/wordpress.php
@@ -77,5 +99,11 @@ symfony proxy:domain:attach project-domain --dir=htdocs
 define('DB_HOST', config('database.connections.mysql.host'));
 // change to
 define('DB_HOST', config('database.connections.mysql.host').':'.config('database.connections.mysql.port'));
+```
+
+### Bonus
+
+```bash
+composer require --dev wp-cli/wp-cli-bundle
 ```
 
