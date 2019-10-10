@@ -4,15 +4,21 @@
 
 ### 0. Installation...
 
-{% embed url="https://symfony.com/doc/current/setup/symfony\_server.html\#installation" %}
+The Symfony server is part of the `symfony` binary created when you [install Symfony](https://symfony.com/download) and has support for Linux, macOS and Windows. [https://symfony.com/doc/current/setup/symfony\_server.html\#installation](https://symfony.com/doc/current/setup/symfony_server.html#installation)
+
+Local domains are possible thanks to a local proxy \([https://symfony.com/doc/current/setup/symfony\_server.html\#setting-up-the-local-proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)\) provided by the Symfony server. First, start the proxy: 
 
 ```text
 symfony proxy:start
 ```
 
-[https://symfony.com/doc/current/setup/symfony\_server.html\#setting-up-the-local-proxy](https://symfony.com/doc/current/setup/symfony_server.html#setting-up-the-local-proxy)
-
 > If you prefer to use a different TLD, edit the `~/.symfony/proxy.json` file \(where `~` means the path to your user directory\) and change the value of the `tld` option from `wip` to any other TLD.
+
+Enabling TLS
+
+```text
+symfony server:ca:install
+```
 
 ### 1. Spin up the services \(MySQL, Redis, Mailhog...\)
 
