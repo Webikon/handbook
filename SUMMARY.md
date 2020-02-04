@@ -82,6 +82,7 @@
     * [Code Review](engineering/other/code-review.md)
     * [Support](engineering/other/support.md)
     * [Maintenance](engineering/other/maintenance.md)
+    * [Translations](engineering/other/translations.md)
     * [QA](engineering/other/qa.md)
     * [UX](engineering/other/ux.md)
     * [CI/CD](engineering/other/ci-cd.md)
